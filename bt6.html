@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- kiểm tra số nguyên tố -->
+    <script>
+        function getValidNumber(promptMessage) {
+            let input;
+            while (true) {
+                input = prompt(promptMessage);
+                
+                // Nếu người dùng nhấn Cancel hoặc không nhập gì
+                if (input === null || input.trim() === "") {
+                    alert("Bạn chưa nhập giá trị. Vui lòng nhập một số!");
+                    continue;
+                }
+
+                // Kiểm tra xem có phải số không
+                if (isNaN(input)) {
+                    alert("Giá trị không hợp lệ! Vui lòng nhập một số.");
+                    continue;
+                }
+
+                // Nếu hợp lệ, chuyển thành số và trả về
+                return Number(input);
+            }
+        }
+
+        // Nhập 3 số a, b, c
+        let a = getValidNumber("Nhập số ");
+        console.log(`ước số của ${a} là:`)
+        for (let i = 1 ; i <= a ; i++) {
+            if (a%i===0) {
+                console.log(i);
+            }
+        }
+        
+    </script>
+</body>
+</html>

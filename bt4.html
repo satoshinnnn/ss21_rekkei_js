@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải nghiệm phương trình bậc 2</title>
+</head>
+<body>
+    <script>
+        function getValidNumber(promptMessage) {
+            let input;
+            while (true) {
+                input = prompt(promptMessage);
+                
+                // Nếu người dùng nhấn Cancel hoặc không nhập gì
+                if (input === null || input.trim() === "") {
+                    alert("Bạn chưa nhập giá trị. Vui lòng nhập một số!");
+                    continue;
+                }
+
+                // Kiểm tra xem có phải số không
+                if (isNaN(input)) {
+                    alert("Giá trị không hợp lệ! Vui lòng nhập một số.");
+                    continue;
+                }
+
+                // Nếu hợp lệ, chuyển thành số và trả về
+                return Number(input);
+            }
+        }
+
+        // Nhập 3 số a, b, c
+        alert("Giải phương trình bậc 2: ax^2 + bx + c = 0")
+        let a = getValidNumber("Nhập số a:");
+        let b = getValidNumber("Nhập số b:");
+        let c = getValidNumber("Nhập số c:");
+        let delta = b**2 - 4*a*c;
+        if (a ===0 ) {
+            alert(`${b}x + ${c} không phải là phương trình bậc 2`)
+        }
+        else if (delta < 0) {
+            alert("Phương trình " + a + " x^2 "+ b + " x " + c + " = 0" + " vô nghiệm" )
+        }
+        else if (delta===0) {
+            alert("Phương trình có nghiệm kép là x = ", (-b/(2*a)))
+        }
+        else {
+            alert("Phương trình có 2 nghiệm phân biệt x1 = ", ((-b + Math.sqrt(delta))/(2*a)) + " và x2 = ", ((-b - Math.sqrt(delta))/(2*a)) );
+        }
+    </script>
+</body>
+</html>

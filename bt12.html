@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = 10;
+        for (let i =1  ; i <= n ; i++) {
+            let r = Math.random()*255;
+            let g = Math.random()*255;
+            let b = Math.random()*255;
+            let color = `rgb(${r},${g},${b})`;
+            console.log(`%c màu sắc lần thứ ${i}`, `color: ${color};`); 
+        }
+    </script>
+</body>
+</html>

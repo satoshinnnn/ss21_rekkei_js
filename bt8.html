@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       alert("số armstrong có 3 chữ số");
+       for (let i = 100 ; i < 1000 ; i++ ) {
+        hundreds = Math.floor(i/100);
+        tens = Math.floor(i/10) % 10;
+        ones = i % 10;
+        
+        if (hundreds**3 + tens**3 + ones**3 === i) {
+            console.log(i); 
+        }
+       }
+     </script>
+</body>
+</html>
